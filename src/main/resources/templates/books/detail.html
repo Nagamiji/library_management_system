@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book List - Library Management System</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+    <div class="container mt-5">
+        <h2>Book Details</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${book.title}">Book Title</h5>
+                <p class="card-text"><b>ISBN:</b> <span th:text="${book.isbn}">ISBN Number</span></p>
+                <p class="card-text"><b>Author:</b> <span th:text="${book.author}">Author Name</span></p>
+                <p class="card-text"><b>Status:</b> <span th:text="${book.status}">Status</span></p>
+                <p class="card-text"><b>Available:</b> <span th:text="${book.available ? 'Yes' : 'No'}">Availability</span></p>
+                <a th:href="@{/books}" class="btn btn-primary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
